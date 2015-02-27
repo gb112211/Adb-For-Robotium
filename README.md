@@ -3,3 +3,4 @@
 
 模拟器上无效果，需要真机并且root。因为使用uiautomaor命令获取uidump.xml时需要root权限，chomd时也需要root权限。
 例子可参考CrossProcessDemo_Robotium.zip中的例子
+demo提供者[http://my.csdn.net/qingchunjun](http://my.csdn.net/qingchunjun)
