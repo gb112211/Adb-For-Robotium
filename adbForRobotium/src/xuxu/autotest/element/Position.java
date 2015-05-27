@@ -261,7 +261,7 @@ public class Position {
 	 * @return 返回text集合
 	 */
 	public ArrayList<String> getTextById(String resourceId) {
-		return this.getText(ElementAttribs.CLASS, resourceId);
+		return this.getText(ElementAttribs.RESOURCE_ID, resourceId);
 	}
 
 	/**
@@ -400,7 +400,7 @@ public class Position {
 				flag = str.equals(dump.getContentDesc());
 				break;
 			case 6:
-				flag = str.equals(dump.getCheckable());
+				flag = str.equals(dump.getClickable());
 				break;
 			default:
 				break;
@@ -449,7 +449,7 @@ public class Position {
 				flag = str.equals(dump.getContentDesc());
 				break;
 			case 6:
-				flag = str.equals(dump.getCheckable());
+				flag = str.equals(dump.getClickable());
 				break;
 			default:
 				break;

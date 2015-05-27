@@ -78,7 +78,7 @@ public class ShellUtils {
 	}
 	
 	public static InputStream StringTOInputStream(String in) throws Exception {
-		ByteArrayInputStream is = new ByteArrayInputStream(in.getBytes("ISO-8859-1"));
+		ByteArrayInputStream is = new ByteArrayInputStream(in.getBytes());
 		return is;
 	}
 }
