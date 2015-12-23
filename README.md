@@ -93,19 +93,19 @@ demo 提供者 [http://my.csdn.net/qingchunjun](http://my.csdn.net/qingchunjun)
 ## FAQ
 *	`java.lang.NoClassDefFoundError: com.robotium.solo.Solo`  
 
-解决方法：
+	解决方法：
 右键项目 > Build Path > Config Build Path > Order and Export,
 选中 robotium 的 jar 包并勾选，点击 Top 移动到顶部。
 ![robotium-bulid-path](/image/robotium_build_path.png)
 
 *	`java.lang.NoClassDefFoundError: xuxu.autotest.element.Position`  
 
-解决方法：
+	解决方法：
 与上面的解决方法相同。
 
 *	`xuxu.autotest.TestException: 未在当前界面找到元素`  
 
-解决方法：
+	解决方法：
 	*	确定是使用真机，并且使用第三方 root 软件 root，并且在 root 权限管理中对被测应用进行授权
 	*	确定已跳转至目标界面，使用 sdk 自带工具 uiautomatorviewer，确认需要定位的元素的属性是否有误
 	![uiautomatorviewer](/image/uiautomatorviewer.png)
@@ -113,7 +113,7 @@ demo 提供者 [http://my.csdn.net/qingchunjun](http://my.csdn.net/qingchunjun)
 	![throttle](/image/throttle.png)
 *	`Test run failed: Instrumentation run failed due to 'Process crashed.'`
   
-解决方法：
+	解决方法：
 
 	```
 	F:\git-project>adb shell ps | grep com.example.crossprocessdemo
@@ -125,6 +125,6 @@ demo 提供者 [http://my.csdn.net/qingchunjun](http://my.csdn.net/qingchunjun)
 Windows 如果没有 grep 命令，用 findstr 命令，杀掉未正常结束掉的被测应用进程。
 *	Eclipse 查看源码出现乱码
 
-解决方法：
+	解决方法：
 更改 Eclipse 的编码格式为 utf-8.
 
