@@ -9,12 +9,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class ShellUtils {
-//	public static Process cmd(String command) {
-//		return process("adb " + command);
-//	}
 
 	public static Process shell(String command) {
-//		return process("adb shell " + command);
 		return process(command);
 	}
 	
@@ -72,7 +68,6 @@ public class ShellUtils {
 			os.writeBytes("exit\n");
 			os.flush();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -21,7 +21,6 @@ public class Position {
 	private List<UiDump> dumps = null;
 
 	public Position() {
-//		uidump();
 	}
 
 	// 获取设备当前界面的控件信息，并解析uidump.xml文件
