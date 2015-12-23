@@ -96,7 +96,8 @@ demo 提供者 [http://my.csdn.net/qingchunjun](http://my.csdn.net/qingchunjun)
 	解决方法：
 右键项目 > Build Path > Config Build Path > Order and Export,
 选中 robotium 的 jar 包并勾选，点击 Top 移动到顶部。
-![robotium-bulid-path](/image/robotium_build_path.png)
+
+	![robotium-bulid-path](/image/robotium_build_path.png)
 
 *	`java.lang.NoClassDefFoundError: xuxu.autotest.element.Position`  
 
@@ -108,9 +109,11 @@ demo 提供者 [http://my.csdn.net/qingchunjun](http://my.csdn.net/qingchunjun)
 	解决方法：
 	*	确定是使用真机，并且使用第三方 root 软件 root，并且在 root 权限管理中对被测应用进行授权
 	*	确定已跳转至目标界面，使用 sdk 自带工具 uiautomatorviewer，确认需要定位的元素的属性是否有误
-	![uiautomatorviewer](/image/uiautomatorviewer.png)
+	
+		![uiautomatorviewer](/image/uiautomatorviewer.png)
 	*	在进入目标页面进行定位之前，增加延时。
-	![throttle](/image/throttle.png)
+	
+		![throttle](/image/throttle.png)
 *	`Test run failed: Instrumentation run failed due to 'Process crashed.'`
   
 	解决方法：
