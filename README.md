@@ -121,5 +121,5 @@ demo 提供者 [http://my.csdn.net/qingchunjun](http://my.csdn.net/qingchunjun)
 Windows 如果没有 grep 命令，用 findstr 命令，杀掉未正常结束掉的被测应用进程。
 *	Eclipse 查看源码出现乱码
 解决方法：
-更改 Eclips 的编码格式为 utf-8.
+更改 Eclipse 的编码格式为 utf-8.
 
