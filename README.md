@@ -22,72 +22,72 @@ demo 提供者 [http://my.csdn.net/qingchunjun](http://my.csdn.net/qingchunjun)
 
 ## 使用方法
 *	克隆该项目至本地，或者 DownloadZip
-```
-git clone https://github.com/gb112211/Adb-For-Robotium.git
-```
+	```
+	git clone https://github.com/gb112211/Adb-For-Robotium.git
+	```
 
 *	在 Eclipse 中导入该项目，或者在测试项目中引入 jar 目录中的 jar 包
 *	调用方法及部分方法使用示例,以下图手机桌面为例，场景为在被测应用界面按下Home键返回到桌面，此时已不能通过 Solo 去控制设备
 
-	![launcher image](/image/launcher.png)
+	![launcher image](/image/launcher.png)  
 初始化：
-```
-AdbDevice adb = new AdbDevice();
-```
+	```
+	AdbDevice adb = new AdbDevice();
+	```
 需要依靠元素定位时：
-```
-Position position = new Position();
-```
+	```
+	Position position = new Position();
+	```
 按下物理按键
-```
-//按下Home键
-adb.sendKeyEvent(AndroidKeyCode.HOME);
-//按下菜单键
-adb.sendKeyEvent(AndroidKeyCode.MENU);
-//按下返回键
-adb.sendKeyEvent(AndroidKeyCode.BACK);
-//按下电源键
-adb.sendKeyEvent(AndroidKeyCode.POWER);
-//长按Home键盘
-adb.longPressKey(AndroidKeyCode.HOME);
-//长按电源键
-adb.longPressKey(AndroidKeyCode.POWER);
-```
+	```
+	//按下Home键
+	adb.sendKeyEvent(AndroidKeyCode.HOME);
+	//按下菜单键
+	adb.sendKeyEvent(AndroidKeyCode.MENU);
+	//按下返回键
+	adb.sendKeyEvent(AndroidKeyCode.BACK);
+	//按下电源键
+	adb.sendKeyEvent(AndroidKeyCode.POWER);
+	//长按Home键盘
+	adb.longPressKey(AndroidKeyCode.HOME);
+	//长按电源键
+	adb.longPressKey(AndroidKeyCode.POWER);
+	```
 点击某个位置
-```
-//通过坐标点击相机图标
-adb.tap(160, 1060)
-//通过相机图标的名称这个元素进行点击（还可通过class、resource id 等属性定位）
-adb.tap(position.findElementByText("相机"))
-//长按相机图标1.5s
-adb.longPress(160, 1060, 1500);
-//或者
-adb.longPress(position.findElementByText("相机"))
-```
+	```
+	//通过坐标点击相机图标
+	adb.tap(160, 1060)
+	//通过相机图标的名称这个元素进行点击（还可通过class、resource id 等属性定位）
+	adb.tap(position.findElementByText("相机"))
+	//长按相机图标1.5s
+	adb.longPress(160, 1060, 1500);
+	//或者
+	adb.longPress(position.findElementByText("相机"))
+	```
 滑动屏幕
-```
-//左滑屏幕，持续500ms
-adb.swipe(900, 1060, 160, 1060, 500);
-或者，从“个性主题”图标位置滑动至“相机图标位置”
-adb.swipe(position.findElementByText("个性主题"), position.findElementByText("相机"), 500)
-```
+	```
+	//左滑屏幕，持续500ms
+	adb.swipe(900, 1060, 160, 1060, 500);
+	或者，从“个性主题”图标位置滑动至“相机图标位置”
+	adb.swipe(position.findElementByText("个性主题"), position.findElementByText("相机"), 500)
+	```
 缩放屏幕
-```
-//第一个起始点的位置(500, 700),该店滑动至(800,400)
-//第二个起始点的位置(500,1200),该店滑动至(200,1600)
-//持续1s
-adb.pinchZoom(500,700,800,400,500,1200,200,1600,1000);
-```
+	```
+	//第一个起始点的位置(500, 700),该店滑动至(800,400)
+	//第二个起始点的位置(500,1200),该店滑动至(200,1600)
+	//持续1s
+	adb.pinchZoom(500,700,800,400,500,1200,200,1600,1000);
+	```
 启动其它应用
-```
-//启动相机
-adb.startActivity("com.android.camera/.Camera");
-```
+	```
+	//启动相机
+	adb.startActivity("com.android.camera/.Camera");
+	```
 截屏
-```
-//截屏并保存至sd卡
-adb.getSceenshot().writeToFile("sdcard");
-```
+	```
+	//截屏并保存至sd卡
+	adb.getSceenshot().writeToFile("sdcard");
+	```
 剩余方法请查看源码。
 
 ## FAQ
