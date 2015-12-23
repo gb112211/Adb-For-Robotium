@@ -28,7 +28,8 @@ git clone https://github.com/gb112211/Adb-For-Robotium.git
 
 *	在 Eclipse 中导入该项目，或者在测试项目中引入 jar 目录中的 jar 包
 *	调用方法及部分方法使用示例,以下图手机桌面为例，场景为在被测应用界面按下Home键返回到桌面，此时已不能通过Solo去控制设备
-![launcher image](/image/launcher.png)
+
+	![launcher image](/image/launcher.png)
 初始化：
 ```
 AdbDevice adb = new AdbDevice();
