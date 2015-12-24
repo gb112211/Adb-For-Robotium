@@ -2,6 +2,7 @@ package xuxu.autotest;
 
 import java.util.ArrayList;
 
+import xuxu.autotest.utils.MonkeyScriptUtils;
 import xuxu.autotest.utils.ShellUtils;
 import xuxu.autotest.element.Element;
 
@@ -91,7 +92,7 @@ public class AdbDevice {
 		String param2 = "UserWait(1500)";
 		String param3 = "DispatchKey(0,0,1," + keycode + ",0,0,0,0)";
 		String param = param1 + "\n" + param2 + "\n" + param3;
-		writeMonkeyScriptFile(param);
+		MonkeyScriptUtils.writeScript(param);
 		runMonkey();
 		sleep(500);
 	}
@@ -108,7 +109,7 @@ public class AdbDevice {
 	 */
 	public void longPress(int x, int y, long ms) {
 		String param = "PressAndHold(" + x + "," + y + "," + ms + ")";
-		writeMonkeyScriptFile(param);
+		MonkeyScriptUtils.writeScript(param);
 		runMonkey();
 	}
 
@@ -122,7 +123,7 @@ public class AdbDevice {
 	 */
 	public void longPress(Element e, long ms) {
 		String param = "PressAndHold(" + e.getX() + "," + e.getY() + "," + ms + ")";
-		writeMonkeyScriptFile(param);
+		MonkeyScriptUtils.writeScript(param);
 		runMonkey();
 	}
 
@@ -166,7 +167,7 @@ public class AdbDevice {
 	 */
 	public void swipe(int startX, int startY, int endX, int endY, long ms) {
 		String param = startX + "," + startY + "," + endX + "," + endY + "," + ms;
-		writeMonkeyScriptFile("PinchZoom(" + param + ")");
+		MonkeyScriptUtils.writeScript("Drag(" + param + ")");
 		runMonkey();
 		sleep(500);
 	}
@@ -183,7 +184,7 @@ public class AdbDevice {
 	 */
 	public void swipe(Element e1, Element e2, long ms) {
 		String param = e1.getX() + "," + e1.getY() + "," + e2.getX() + "," + e2.getY() + "," + ms;
-		writeMonkeyScriptFile("PinchZoom(" + param + ")");
+		MonkeyScriptUtils.writeScript("Drag(" + param + ")");
 		runMonkey();
 		sleep(500);
 	}
@@ -214,7 +215,7 @@ public class AdbDevice {
 			int endY2, long ms) {
 		String param = startX1 + "," + startY1 + "," + endX1 + "," + endY1 + "," + startX2 + "," + startY2 + "," + endX2
 				+ "," + endY2 + "," + ms;
-		writeMonkeyScriptFile("PinchZoom(" + param + ")");
+		MonkeyScriptUtils.writeScript("PinchZoom(" + param + ")");
 		runMonkey();
 	}
 
@@ -286,15 +287,8 @@ public class AdbDevice {
 		ShellUtils.suShell("am start -a android.intent.action.CALL -d tel:" + number);
 	}
 
-	private void writeMonkeyScriptFile(String cmd) {
-		shell("rm /data/local/tmp/monkey.txt");
-		shell("touch /data/local/tmp/monkey.txt");
-		shell("echo \"count= 1\nspeed= 1.0\nstart data >>\n\" > /data/local/tmp/monkey.txt");
-		shell("echo \"" + cmd + "\" >> /data/local/tmp/monkey.txt");
-	}
-
 	private void runMonkey() {
-		shell("monkey -f /data/local/tmp/monkey.txt 1");
+		shell("monkey -f " + System.getProperty("java.io.tmpdir") + "/monkey.txt 1");
 	}
 
 	private void sleep(long millis) {
